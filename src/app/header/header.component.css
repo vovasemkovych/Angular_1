@@ -1,0 +1,44 @@
+.masthead {
+    min-height: 30rem;
+    position: relative;
+    display: table;
+    width: 100%;
+    height: auto;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url("../../assets/img/cover_bg_3.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .masthead h1, .masthead .h1 {
+    font-size: 4rem;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(90deg, rgba(233,99,121) 0%, rgba(47,47,62,1) 75%, rgba(0,0,0,1) 100%);
+    -webkit-background-clip: text; /* rgba(0,0,0,1) */
+    -webkit-text-fill-color: transparent; 
+    background-clip: text; 
+    /* text-fill-color: transparent; */
+  }
+  h2{
+    color: rgb(155, 14, 38);
+  }
+  .btn{
+    background-color:rgba(47,47,62,1);
+    border-color:rgb(99, 15, 29);
+    color: rgb(255, 255, 255);
+  }
+  .btn:hover{
+    background-color:rgb(99, 15, 29);
+    border-color:rgb(255, 255, 255);
+  }
+  @media (min-width: 992px) {
+    .masthead {
+      height: 100vh;
+    }
+    .masthead h1, .masthead .h1 {
+      font-size: 5.5rem;
+    }
+  }

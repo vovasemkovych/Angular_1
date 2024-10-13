@@ -1,0 +1,108 @@
+.portfolio-item {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    max-width: 530px;
+    margin: auto auto 1rem;
+    z-index: 10;
+  }
+  .portfolio-item .caption {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(33, 37, 41, 0.4);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+  .portfolio-item .caption .caption-content {
+    color: #fff;
+    margin: auto 2rem 2rem;
+  }
+  .portfolio-item .caption .caption-content h2, .portfolio-item .caption .caption-content .h2 {
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: rgb(255, 250, 251);
+  }
+  .portfolio-item .caption .caption-content p {
+    font-weight: 300;
+    font-size: 1.2rem;
+  }
+  
+.delete-button {
+  opacity: 0;
+  top: 40px; 
+  right: 40px;
+  z-index: 10; 
+  transition: .3s ease-out;
+}
+
+.portfolio-item:hover > .delete-button {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.form-group{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.form-group input{
+  border-radius: 30px;
+  text-align: center;
+  border-color: rgba(233,99,121);
+  background-color:  rgba(47,47,62,1);
+}
+.form-group:hover input{
+border: 5px double rgba(233,99,121);
+}
+.form-group input::placeholder{
+  color: #cccaca;
+}
+.form-group:hover input::placeholder{
+  color: #777575;
+}
+button.test{
+  margin-right: 5px !important;
+}
+  @media (min-width: 992px) {
+    .portfolio-item {
+      max-width: none;
+      margin: 0;
+    }
+    .portfolio-item .caption {
+      transition: background-color 0.7s, -webkit-clip-path 0.25s ease-out;
+      transition: clip-path 0.25s ease-out, background-color 0.7s;
+      transition: clip-path 0.25s ease-out, background-color 0.7s, -webkit-clip-path 0.25s ease-out;
+      -webkit-clip-path: inset(0px);
+              clip-path: inset(0px);
+    }
+    .portfolio-item .caption .caption-content {
+      transition: opacity 0.25s;
+      margin-left: 5rem;
+      margin-right: 5rem;
+      margin-bottom: 5rem;
+    }
+    .portfolio-item img {
+      transition: -webkit-clip-path 0.25s ease-out;
+      transition: clip-path 0.25s ease-out;
+      transition: clip-path 0.25s ease-out, -webkit-clip-path 0.25s ease-out;
+      -webkit-clip-path: inset(-1px);
+              clip-path: inset(-1px);
+    }
+    .portfolio-item:hover img {
+      -webkit-clip-path: inset(2rem);
+              clip-path: inset(2rem);
+    }
+    .portfolio-item:hover .caption {
+      background-color: rgba(29, 128, 159, 0.9);
+      -webkit-clip-path: inset(2rem);
+              clip-path: inset(2rem);
+    }
+    .portfolio-item:hover .delete-button {
+      display: block; 
+      top: 40px; 
+  right: 40px;
+    }
+  }

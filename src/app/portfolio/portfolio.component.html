@@ -1,0 +1,40 @@
+<section class="content-section" id="portfolio">
+  <div class="container px-4 px-lg-5">
+    <div class="content-section-heading text-center">
+      <h3 class="text-secondary mb-0">Portfolio</h3>
+      <h2 class="mb-5">Recent Projects</h2>
+    </div>
+
+    <div class="row gx-0">
+      <div class="col-lg-6 position-relative" *ngFor="let item of portfolioItems; let i = index">
+        <div class="portfolio-item">
+        <a  href="#">
+          <div class="caption">
+            <div class="caption-content">
+              <div class="h2">{{ item.title }}</div>
+              <div class="p">{{ item.description }}</div>
+            </div>
+          </div>
+          <img class="img-fluid" [src]="item.imageUrl" alt="{{ item.title }}" />
+        </a>
+        <button class="btn btn-danger btn-sm rounded-circle delete-button position-absolute"  (click)="deletePortfolioItem(i)">
+          <i class="fa fa-trash"></i>
+        </button>
+      </div>
+      </div>
+    </div>
+    <div class="mt-5">
+      <h2 class="text-center mb-5">Add New Project</h2>
+      <form (submit)="addPortfolioItem(); $event.preventDefault()">
+        <div class="form-group">
+          <input type="text" [(ngModel)]="newTitle" name="newTitle" placeholder="Project Title" required class="form-control mb-2" />
+          <input type="text" [(ngModel)]="newImageUrl" name="newImageUrl" placeholder="Image URL" required class="form-control mb-2" />
+          <input type="text" [(ngModel)]="newDescription" name="newDescription" placeholder="Project Description" required class="form-control mb-2" />
+        </div>
+        <button type="submit" class="btn btn-primary test ">Add Project</button>
+        <button type="button" class="btn btn-primary test " (click)="restoreDefaultProjects()">Restore Default</button>
+
+      </form>
+    </div>
+  </div>
+</section>
